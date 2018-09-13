@@ -34,17 +34,12 @@ Template.body.events({
       // Get value from form element
       const target = event.target;
       const text = target.text.value;
-   
-      // Insert a task into the collection
-      Tasks.insert({
-        text,
-        createdAt: new Date(), // current time
-      owner: Meteor.userId(),
-      username: Meteor.user().username,
-    });
-   
-      // Clear form
-      target.text.value = '';
+ 
+    // Insert a task into the collection
+    Meteor.call('tasks.insert', text);
+ 
+    // Clear form
+    target.text.value = '';
   },
   'change .hide-completed input'(event, instance) {
     instance.state.set('hideCompleted', event.target.checked);
