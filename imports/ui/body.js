@@ -8,10 +8,11 @@ import './task.js';
 import './body.html';
  
 Template.body.onCreated(function bodyOnCreated() {
-  this.state = new ReactiveDict();
-});
- 
-Template.body.helpers({
+    this.state = new ReactiveDict();
+    Meteor.subscribe('tasks');
+  });
+   
+  Template.body.helpers({
     tasks() {
       const instance = Template.instance();
       if (instance.state.get('hideCompleted')) {
