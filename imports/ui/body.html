@@ -15,7 +15,7 @@
           <input type="text" name="firstname" placeholder="First name" /><br>
           <input type="text" name="surname" placeholder="Surname" /><br>
           <select name="gender">
-              <option value="select">Select</option>
+              <option value="select">Gender</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
           </select><br>
@@ -24,7 +24,14 @@
         </form>
       {{/if}}
     </header>
-     
+    <table>
+      <tr>
+        <th>First Name</th>
+        <th>Surname</th>
+        <th>Gender</th>
+        <th>Date of Birth</th>
+      </tr>
+      </table>
         <ul>
         {{#each tasks}}
           {{> task}} 

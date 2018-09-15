@@ -38,11 +38,11 @@ Template.body.events({
       const surname = newtask.surname.value;
       const gender = newtask.gender.value;
       const dob = newtask.dob.value;
-      const eit = [firstname, surname, gender, dob];
+      const eit = {firstName: firstname, surName: surname, gEnder:gender, dOb: dob};
  
     // Insert a task into the collection
     Meteor.call('tasks.insert', eit);
- 
+ ;
     // Clear form
     newtask.firstname.value = '';
     newtask.surname.value = '';

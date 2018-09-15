@@ -16,7 +16,24 @@ body {
  
   font-size: 14px;
 }
- 
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  width:100px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
 .container {
   max-width: 600px;
   margin: 0 auto;
@@ -67,7 +84,13 @@ form {
 .newtask input:focus, .newtask select:focus{
   outline: 0;
 }
- 
+
+#checkingbox {
+  position: absolute;
+  margin-left: -20px;
+  margin-top: 12px;
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -75,19 +98,21 @@ ul {
 }
  
 .delete {
-  float: right;
   font-weight: bold;
   background: none;
   font-size: 1em;
   border: none;
-  position: relative;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 9px;
 }
  
 li {
   position: relative;
   list-style: none;
-  padding: 15px;
   border-bottom: #eee solid 1px;
+  margin-bottom: -2px;
 }
  
 li .text {
