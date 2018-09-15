@@ -14,8 +14,11 @@
         <form name="newtask" class="newtask">
           <input type="text" name="firstname" placeholder="First name" /><br>
           <input type="text" name="surname" placeholder="Surname" /><br>
-          <input type="radio" class="genderpicker" name="gender" value="male" /> Male<br>
-          <input type="radio" class="genderpicker" name="gender" value="female" /> Female<br>
+          <select name="gender">
+              <option value="select">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select><br>
           <input type="date" name="dob" placeholder="Date of Birth" /><br>
           <button class="formsubmit">Submit</button>
         </form>
@@ -24,7 +27,7 @@
      
         <ul>
         {{#each tasks}}
-          {{> task}}{{firstname}}
+          {{> task}} 
         {{/each}}
       </ul>
     </div>

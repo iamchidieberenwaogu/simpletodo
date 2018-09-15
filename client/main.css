@@ -40,9 +40,6 @@ header {
   text-align: left!important;
 }
 
-.genderpicker {
-  margin-left: 0px!important;
-}
 h1 {
   font-size: 1.5em;
   margin: 0;
@@ -57,7 +54,7 @@ form {
   position: relative;
 }
  
-.newtask input {
+.newtask input, .newtask select  {
   box-sizing: border-box;
   padding: 10px 0;
   background: transparent;
@@ -67,7 +64,7 @@ form {
   font-size: 1em;
 }
  
-.newtask input:focus{
+.newtask input:focus, .newtask select:focus{
   outline: 0;
 }
  
@@ -128,7 +125,7 @@ header .hide-completed {
     clear: both;
   }
  
-  .newtask input {
+  .newtask input, .newtask select {
     padding-bottom: 5px;
   }
 }

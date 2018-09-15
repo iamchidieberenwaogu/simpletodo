@@ -29,6 +29,7 @@ Template.body.onCreated(function bodyOnCreated() {
  
 Template.body.events({
   'click .formsubmit'() {
+    if (newtask.gender.value !== 'select') {
       // Prevent default browser form submit
       event.preventDefault();
    
@@ -40,17 +41,14 @@ Template.body.events({
       const eit = [firstname, surname, gender, dob];
  
     // Insert a task into the collection
-    Meteor.call('tasks.insert', firstname);
-    Meteor.call('tasks.insert', surname);
-    Meteor.call('tasks.insert', gender);
-    Meteor.call('tasks.insert', dob);
+    Meteor.call('tasks.insert', eit);
  
     // Clear form
     newtask.firstname.value = '';
     newtask.surname.value = '';
-    newtask.gender.value = null;
+    newtask.gender.value = 'select';
     newtask.dob.value = null;
-
+    }
   },
   'change .hide-completed input'(event, instance) {
     instance.state.set('hideCompleted', event.newtask.checked);
