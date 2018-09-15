@@ -35,6 +35,14 @@ header {
   display: block;
 }
  
+.formbutton {
+  cursor: pointer!important; 
+  text-align: left!important;
+}
+
+.genderpicker {
+  margin-left: 0px!important;
+}
 h1 {
   font-size: 1.5em;
   margin: 0;
@@ -54,7 +62,7 @@ form {
   padding: 10px 0;
   background: transparent;
   border: none;
-  width: 100%;
+  /* width: 100%; */
   padding-right: 80px;
   font-size: 1em;
 }
