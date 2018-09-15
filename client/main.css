@@ -35,7 +35,7 @@ header {
   display: block;
 }
  
-.formbutton {
+.formbutton, .formsubmit {
   cursor: pointer!important; 
   text-align: left!important;
 }

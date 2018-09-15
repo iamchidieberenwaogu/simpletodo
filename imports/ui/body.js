@@ -28,19 +28,29 @@ Template.body.onCreated(function bodyOnCreated() {
 });
  
 Template.body.events({
-    'submit .new-task'(event) {
+  'click .formsubmit'() {
       // Prevent default browser form submit
       event.preventDefault();
    
       // Get value from form element
       const target = event.target;
-      const text = target.text.value;
+      const firstname = target.firstname.value;
+      const surname = target.surname.value;
+      const gender = target.gender.value;
+      const dob = target.dob.value;
  
     // Insert a task into the collection
-    Meteor.call('tasks.insert', text);
+    Meteor.call('tasks.insert', firstname);
+    Meteor.call('tasks.insert', surname);
+    Meteor.call('tasks.insert', gender);
+    Meteor.call('tasks.insert', dob);
  
     // Clear form
-    target.text.value = '';
+    target.firstname.value = '';
+    target.surname.value = '';
+    target.gender.value = null;
+    target.dob.value = null;
+
   },
   'change .hide-completed input'(event, instance) {
     instance.state.set('hideCompleted', event.target.checked);
