@@ -11,14 +11,13 @@
         {{> loginButtons}}
  
       {{#if currentUser}}
-        <form class="new-task">
+        <form class="newtask">
           <input type="text" name="firstname" placeholder="First name" /><br>
           <input type="text" name="surname" placeholder="Surname" /><br>
           <input type="radio" class="genderpicker" name="gender" value="male" /> Male<br>
           <input type="radio" class="genderpicker" name="gender" value="female" /> Female<br>
           <input type="date" name="dob" placeholder="Date of Birth" /><br>
-          <input type="submit" class="formsubmit" value="Submit" /><br>
-          <input type="reset" class="formbutton" />
+          <button class="formsubmit">Submit</button>
         </form>
       {{/if}}
     </header>

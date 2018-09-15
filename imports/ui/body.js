@@ -33,11 +33,10 @@ Template.body.events({
       event.preventDefault();
    
       // Get value from form element
-      const target = event.target;
-      const firstname = target.firstname.value;
-      const surname = target.surname.value;
-      const gender = target.gender.value;
-      const dob = target.dob.value;
+      const firstname = newtask.firstname.value;
+      const surname = newtask.surname.value;
+      const gender = newtask.gender.value;
+      const dob = newtask.dob.value;
  
     // Insert a task into the collection
     Meteor.call('tasks.insert', firstname);
@@ -46,13 +45,13 @@ Template.body.events({
     Meteor.call('tasks.insert', dob);
  
     // Clear form
-    target.firstname.value = '';
-    target.surname.value = '';
-    target.gender.value = null;
-    target.dob.value = null;
+    newtask.firstname.value = '';
+    newtask.surname.value = '';
+    newtask.gender.value = null;
+    newtask.dob.value = null;
 
   },
   'change .hide-completed input'(event, instance) {
-    instance.state.set('hideCompleted', event.target.checked);
+    instance.state.set('hideCompleted', event.newtask.checked);
   },
 });
