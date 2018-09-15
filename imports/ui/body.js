@@ -40,7 +40,10 @@ Template.body.events({
       const eit = [firstname, surname, gender, dob];
  
     // Insert a task into the collection
-    Meteor.call('tasks.insert', eit);
+    Meteor.call('tasks.insert', firstname);
+    Meteor.call('tasks.insert', surname);
+    Meteor.call('tasks.insert', gender);
+    Meteor.call('tasks.insert', dob);
  
     // Clear form
     newtask.firstname.value = '';
